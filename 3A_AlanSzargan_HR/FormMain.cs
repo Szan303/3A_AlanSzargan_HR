@@ -24,5 +24,10 @@ namespace _3A_AlanSzargan_HR
             FormDodawanieOsob dodawanieosob = new FormDodawanieOsob();
             dodawanieosob.Show();
         }
+        private void btnMainUsunOsobe_Click(object sender, EventArgs e)
+        {
+            FormUsuwanieOsob usuwanieosob = new FormUsuwanieOsob();
+            usuwanieosob.Show();
+        }
     }
 }

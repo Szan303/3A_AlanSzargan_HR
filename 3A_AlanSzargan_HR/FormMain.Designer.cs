@@ -86,6 +86,7 @@
             btnMainUsunOsobe.TabIndex = 4;
             btnMainUsunOsobe.Text = "Usuń Osobę";
             btnMainUsunOsobe.UseVisualStyleBackColor = false;
+            btnMainUsunOsobe.Click += this.btnMainUsunOsobe_Click;
             // 
             // FormMain
             // 

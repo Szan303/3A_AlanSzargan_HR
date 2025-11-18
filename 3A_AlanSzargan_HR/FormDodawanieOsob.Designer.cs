@@ -38,13 +38,13 @@
             txbDodajOsobeHaslo = new TextBox();
             btnDodajOsobeDodaj = new Button();
             lblDodajOsobeDataUrodzenia = new Label();
-            dateTimePicker1 = new DateTimePicker();
+            dtpDodajOsobeDataUrodzenia = new DateTimePicker();
             lblDodajOsobeEmail = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            txtDodajOsobeEmail = new TextBox();
+            txtDodajOsobeTelefon = new TextBox();
             lblDodajOsobeTelefon = new Label();
             lblDodajOsobeRolaOsoby = new Label();
-            comboBox1 = new ComboBox();
+            cmbDodajOsobeRola = new ComboBox();
             SuspendLayout();
             // 
             // txbDodajOsobeImie
@@ -119,6 +119,7 @@
             btnDodajOsobeDodaj.TabIndex = 7;
             btnDodajOsobeDodaj.Text = "Dodaj";
             btnDodajOsobeDodaj.UseVisualStyleBackColor = false;
+            btnDodajOsobeDodaj.Click += btnDodajOsobeDodaj_Click;
             // 
             // lblDodajOsobeDataUrodzenia
             // 
@@ -130,16 +131,16 @@
             lblDodajOsobeDataUrodzenia.TabIndex = 8;
             lblDodajOsobeDataUrodzenia.Text = "Data Urodzenia";
             // 
-            // dateTimePicker1
+            // dtpDodajOsobeDataUrodzenia
             // 
-            dateTimePicker1.CalendarForeColor = Color.White;
-            dateTimePicker1.CalendarMonthBackground = Color.FromArgb(40, 40, 43);
-            dateTimePicker1.CalendarTitleForeColor = Color.Yellow;
-            dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(12, 320);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(160, 31);
-            dateTimePicker1.TabIndex = 9;
+            dtpDodajOsobeDataUrodzenia.CalendarForeColor = Color.White;
+            dtpDodajOsobeDataUrodzenia.CalendarMonthBackground = Color.FromArgb(40, 40, 43);
+            dtpDodajOsobeDataUrodzenia.CalendarTitleForeColor = Color.Yellow;
+            dtpDodajOsobeDataUrodzenia.Format = DateTimePickerFormat.Short;
+            dtpDodajOsobeDataUrodzenia.Location = new Point(12, 320);
+            dtpDodajOsobeDataUrodzenia.Name = "dtpDodajOsobeDataUrodzenia";
+            dtpDodajOsobeDataUrodzenia.Size = new Size(160, 31);
+            dtpDodajOsobeDataUrodzenia.TabIndex = 9;
             // 
             // lblDodajOsobeEmail
             // 
@@ -151,23 +152,23 @@
             lblDodajOsobeEmail.TabIndex = 10;
             lblDodajOsobeEmail.Text = "Email";
             // 
-            // textBox1
+            // txtDodajOsobeEmail
             // 
-            textBox1.BackColor = Color.FromArgb(40, 40, 43);
-            textBox1.ForeColor = Color.White;
-            textBox1.Location = new Point(257, 50);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(161, 31);
-            textBox1.TabIndex = 11;
+            txtDodajOsobeEmail.BackColor = Color.FromArgb(40, 40, 43);
+            txtDodajOsobeEmail.ForeColor = Color.White;
+            txtDodajOsobeEmail.Location = new Point(257, 50);
+            txtDodajOsobeEmail.Name = "txtDodajOsobeEmail";
+            txtDodajOsobeEmail.Size = new Size(161, 31);
+            txtDodajOsobeEmail.TabIndex = 11;
             // 
-            // textBox2
+            // txtDodajOsobeTelefon
             // 
-            textBox2.BackColor = Color.FromArgb(40, 40, 43);
-            textBox2.ForeColor = Color.White;
-            textBox2.Location = new Point(257, 137);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(161, 31);
-            textBox2.TabIndex = 13;
+            txtDodajOsobeTelefon.BackColor = Color.FromArgb(40, 40, 43);
+            txtDodajOsobeTelefon.ForeColor = Color.White;
+            txtDodajOsobeTelefon.Location = new Point(257, 137);
+            txtDodajOsobeTelefon.Name = "txtDodajOsobeTelefon";
+            txtDodajOsobeTelefon.Size = new Size(161, 31);
+            txtDodajOsobeTelefon.TabIndex = 13;
             // 
             // lblDodajOsobeTelefon
             // 
@@ -189,15 +190,15 @@
             lblDodajOsobeRolaOsoby.TabIndex = 14;
             lblDodajOsobeRolaOsoby.Text = "Uprawnienia";
             // 
-            // comboBox1
+            // cmbDodajOsobeRola
             // 
-            comboBox1.BackColor = Color.FromArgb(40, 40, 43);
-            comboBox1.ForeColor = Color.White;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(257, 229);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(182, 33);
-            comboBox1.TabIndex = 16;
+            cmbDodajOsobeRola.BackColor = Color.FromArgb(40, 40, 43);
+            cmbDodajOsobeRola.ForeColor = Color.White;
+            cmbDodajOsobeRola.FormattingEnabled = true;
+            cmbDodajOsobeRola.Location = new Point(257, 229);
+            cmbDodajOsobeRola.Name = "cmbDodajOsobeRola";
+            cmbDodajOsobeRola.Size = new Size(182, 33);
+            cmbDodajOsobeRola.TabIndex = 16;
             // 
             // FormDodawanieOsob
             // 
@@ -205,13 +206,13 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(40, 40, 43);
             ClientSize = new Size(800, 450);
-            Controls.Add(comboBox1);
+            Controls.Add(cmbDodajOsobeRola);
             Controls.Add(lblDodajOsobeRolaOsoby);
-            Controls.Add(textBox2);
+            Controls.Add(txtDodajOsobeTelefon);
             Controls.Add(lblDodajOsobeTelefon);
-            Controls.Add(textBox1);
+            Controls.Add(txtDodajOsobeEmail);
             Controls.Add(lblDodajOsobeEmail);
-            Controls.Add(dateTimePicker1);
+            Controls.Add(dtpDodajOsobeDataUrodzenia);
             Controls.Add(lblDodajOsobeDataUrodzenia);
             Controls.Add(btnDodajOsobeDodaj);
             Controls.Add(txbDodajOsobeHaslo);
@@ -238,12 +239,12 @@
         private TextBox txbDodajOsobeHaslo;
         private Button btnDodajOsobeDodaj;
         private Label lblDodajOsobeDataUrodzenia;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dtpDodajOsobeDataUrodzenia;
         private Label lblDodajOsobeEmail;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox txtDodajOsobeEmail;
+        private TextBox txtDodajOsobeTelefon;
         private Label lblDodajOsobeTelefon;
         private Label lblDodajOsobeRolaOsoby;
-        private ComboBox comboBox1;
+        private ComboBox cmbDodajOsobeRola;
     }
 }

@@ -39,7 +39,6 @@ namespace _3A_AlanSzargan_HR.LogowanieOsoby
                     new DateTime(1990, 1, 1),
                     "admin@local",
                     "000000000",
-                    true,
                     Role.Rola.AdministratorHR
                     );
                 listaOsob.Add(admin);

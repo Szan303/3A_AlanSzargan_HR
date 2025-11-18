@@ -16,10 +16,12 @@ namespace _3A_AlanSzargan_HR.LogowanieOsoby
         public string Email { get; set; }
         public string Telefon { get; set; }
         public Boolean IsActive { get; set; }
+        public DateTime? PoczatekUrlopu { get; set; }
+        public DateTime? KoniecUrlopu { get; set; }
         [JsonConverter(typeof(JsonStringEnumConverter))]
         public Role.Rola RolaOsoby { get; set; }
 
-        public Osoba(string imie, string nazwisko, string haslo, DateTime dataUrodzenia, string email, string telefon, Boolean isActive, Role.Rola rolaOsoby)
+        public Osoba(string imie, string nazwisko, string haslo, DateTime dataUrodzenia, string email, string telefon, Role.Rola rolaOsoby)
         {
             Id = Guid.NewGuid();
             Imie = imie;
@@ -29,7 +31,8 @@ namespace _3A_AlanSzargan_HR.LogowanieOsoby
             DataUrodzenia = dataUrodzenia;
             Email = email;
             Telefon = telefon;
-            IsActive = isActive;
+            PoczatekUrlopu = null;
+            KoniecUrlopu = null;
             RolaOsoby = rolaOsoby;
         }
         
