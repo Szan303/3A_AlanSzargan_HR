@@ -16,6 +16,7 @@ namespace _3A_AlanSzargan_HR.LogowanieOsoby
         public string Email { get; set; }
         public string Telefon { get; set; }
         public Boolean IsActive { get; set; }
+        public DateTime OstatniaAktywnosc { get; set; }
         public DateTime? PoczatekUrlopu { get; set; }
         public DateTime? KoniecUrlopu { get; set; }
         [JsonConverter(typeof(JsonStringEnumConverter))]
@@ -35,6 +36,10 @@ namespace _3A_AlanSzargan_HR.LogowanieOsoby
             KoniecUrlopu = null;
             RolaOsoby = rolaOsoby;
         }
-        
+        public override string ToString()
+        {
+            return $"{Imie} {Nazwisko} - {RolaOsoby} Ostatnio Online: {FormMain.PokazCzasOd(OstatniaAktywnosc)}";
+        }
+
     }
 }

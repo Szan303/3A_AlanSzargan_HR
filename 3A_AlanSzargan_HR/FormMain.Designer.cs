@@ -33,6 +33,9 @@
             btnMainDodajOsobe = new Button();
             label1 = new Label();
             btnMainUsunOsobe = new Button();
+            libMainGlobalChat = new ListBox();
+            txbMainGlobalChatMessage = new TextBox();
+            btnMainGlobalSendMessage = new Button();
             SuspendLayout();
             // 
             // lblMainPrzywitanie
@@ -47,12 +50,12 @@
             // libMainListaOsob
             // 
             libMainListaOsob.BackColor = Color.FromArgb(40, 40, 43);
-            libMainListaOsob.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            libMainListaOsob.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
             libMainListaOsob.ForeColor = Color.White;
             libMainListaOsob.FormattingEnabled = true;
-            libMainListaOsob.Location = new Point(1101, 63);
+            libMainListaOsob.Location = new Point(774, 63);
             libMainListaOsob.Name = "libMainListaOsob";
-            libMainListaOsob.Size = new Size(308, 292);
+            libMainListaOsob.Size = new Size(635, 279);
             libMainListaOsob.TabIndex = 1;
             // 
             // btnMainDodajOsobe
@@ -86,7 +89,37 @@
             btnMainUsunOsobe.TabIndex = 4;
             btnMainUsunOsobe.Text = "Usuń Osobę";
             btnMainUsunOsobe.UseVisualStyleBackColor = false;
-            btnMainUsunOsobe.Click += this.btnMainUsunOsobe_Click;
+            btnMainUsunOsobe.Click += btnMainUsunOsobe_Click;
+            // 
+            // libMainGlobalChat
+            // 
+            libMainGlobalChat.BackColor = Color.FromArgb(40, 40, 43);
+            libMainGlobalChat.ForeColor = Color.White;
+            libMainGlobalChat.FormattingEnabled = true;
+            libMainGlobalChat.Location = new Point(12, 63);
+            libMainGlobalChat.Name = "libMainGlobalChat";
+            libMainGlobalChat.Size = new Size(725, 504);
+            libMainGlobalChat.TabIndex = 5;
+            // 
+            // txbMainGlobalChatMessage
+            // 
+            txbMainGlobalChatMessage.BackColor = Color.FromArgb(40, 40, 43);
+            txbMainGlobalChatMessage.ForeColor = Color.White;
+            txbMainGlobalChatMessage.Location = new Point(12, 573);
+            txbMainGlobalChatMessage.Name = "txbMainGlobalChatMessage";
+            txbMainGlobalChatMessage.Size = new Size(599, 31);
+            txbMainGlobalChatMessage.TabIndex = 6;
+            // 
+            // btnMainGlobalSendMessage
+            // 
+            btnMainGlobalSendMessage.BackColor = Color.FromArgb(40, 40, 43);
+            btnMainGlobalSendMessage.Location = new Point(625, 570);
+            btnMainGlobalSendMessage.Name = "btnMainGlobalSendMessage";
+            btnMainGlobalSendMessage.Size = new Size(112, 34);
+            btnMainGlobalSendMessage.TabIndex = 7;
+            btnMainGlobalSendMessage.Text = "Wyślij";
+            btnMainGlobalSendMessage.UseVisualStyleBackColor = false;
+            btnMainGlobalSendMessage.Click += button1_Click;
             // 
             // FormMain
             // 
@@ -94,6 +127,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(40, 40, 43);
             ClientSize = new Size(1421, 777);
+            Controls.Add(btnMainGlobalSendMessage);
+            Controls.Add(txbMainGlobalChatMessage);
+            Controls.Add(libMainGlobalChat);
             Controls.Add(btnMainUsunOsobe);
             Controls.Add(label1);
             Controls.Add(btnMainDodajOsobe);
@@ -113,5 +149,8 @@
         private Button btnMainDodajOsobe;
         private Label label1;
         private Button btnMainUsunOsobe;
+        private ListBox libMainGlobalChat;
+        private TextBox txbMainGlobalChatMessage;
+        private Button btnMainGlobalSendMessage;
     }
 }
