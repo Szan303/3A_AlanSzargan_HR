@@ -36,6 +36,14 @@
             libMainGlobalChat = new ListBox();
             txbMainGlobalChatMessage = new TextBox();
             btnMainGlobalSendMessage = new Button();
+            button1 = new Button();
+            button2 = new Button();
+            button3 = new Button();
+            button4 = new Button();
+            pictureBox1 = new PictureBox();
+            button5 = new Button();
+            label2 = new Label();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // lblMainPrzywitanie
@@ -121,12 +129,83 @@
             btnMainGlobalSendMessage.UseVisualStyleBackColor = false;
             btnMainGlobalSendMessage.Click += button1_Click;
             // 
+            // button1
+            // 
+            button1.Location = new Point(12, 681);
+            button1.Name = "button1";
+            button1.Size = new Size(112, 34);
+            button1.TabIndex = 8;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(146, 681);
+            button2.Name = "button2";
+            button2.Size = new Size(112, 34);
+            button2.TabIndex = 9;
+            button2.Text = "button2";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(282, 681);
+            button3.Name = "button3";
+            button3.Size = new Size(112, 34);
+            button3.TabIndex = 10;
+            button3.Text = "button3";
+            button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            button4.Location = new Point(415, 681);
+            button4.Name = "button4";
+            button4.Size = new Size(112, 33);
+            button4.TabIndex = 11;
+            button4.Text = "button4";
+            button4.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Location = new Point(774, 363);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(286, 241);
+            pictureBox1.TabIndex = 12;
+            pictureBox1.TabStop = false;
+            // 
+            // button5
+            // 
+            button5.BackColor = Color.FromArgb(40, 40, 43);
+            button5.ForeColor = Color.White;
+            button5.Location = new Point(1101, 600);
+            button5.Name = "button5";
+            button5.Size = new Size(150, 60);
+            button5.TabIndex = 13;
+            button5.Text = "Usuń Osobę";
+            button5.UseVisualStyleBackColor = false;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(774, 637);
+            label2.Name = "label2";
+            label2.Size = new Size(191, 50);
+            label2.TabIndex = 14;
+            label2.Text = "Dodaj Funkcjonalność \r\nnowym przyciskom\r\n";
+            // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(40, 40, 43);
             ClientSize = new Size(1421, 777);
+            Controls.Add(label2);
+            Controls.Add(button5);
+            Controls.Add(pictureBox1);
+            Controls.Add(button4);
+            Controls.Add(button3);
+            Controls.Add(button2);
+            Controls.Add(button1);
             Controls.Add(btnMainGlobalSendMessage);
             Controls.Add(txbMainGlobalChatMessage);
             Controls.Add(libMainGlobalChat);
@@ -138,6 +217,7 @@
             ForeColor = Color.White;
             Name = "FormMain";
             Text = "Main";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -152,5 +232,12 @@
         private ListBox libMainGlobalChat;
         private TextBox txbMainGlobalChatMessage;
         private Button btnMainGlobalSendMessage;
+        private Button button1;
+        private Button button2;
+        private Button button3;
+        private Button button4;
+        private PictureBox pictureBox1;
+        private Button button5;
+        private Label label2;
     }
 }
