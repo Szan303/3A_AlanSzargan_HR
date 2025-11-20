@@ -127,7 +127,7 @@
             btnMainGlobalSendMessage.TabIndex = 7;
             btnMainGlobalSendMessage.Text = "Wyślij";
             btnMainGlobalSendMessage.UseVisualStyleBackColor = false;
-            btnMainGlobalSendMessage.Click += button1_Click;
+            btnMainGlobalSendMessage.Click += btnMainGlobalSendMessage_Click;
             // 
             // button1
             // 

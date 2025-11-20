@@ -6,7 +6,7 @@ namespace _3A_AlanSzargan_HR.Skrypty
 {
     public class Wiadomosc
     {
-        public Guid Id { get; set; }
+        public Guid Id { get; set; } = Guid.NewGuid();
         public Guid NadawcaId { get; set; }
         public string Tekst {  get; set; }
         public DateTime DataWyslania { get; set; }
