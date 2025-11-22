@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Text.Json.Serialization;
 
-namespace _3A_AlanSzargan_HR.LogowanieOsoby
+namespace _3A_AlanSzargan_HR.Skrypty
 {
     public class Osoba
     {
@@ -17,8 +17,6 @@ namespace _3A_AlanSzargan_HR.LogowanieOsoby
         public string Telefon { get; set; }
         public Boolean IsActive { get; set; }
         public DateTime OstatniaAktywnosc { get; set; }
-        public DateTime? PoczatekUrlopu { get; set; }
-        public DateTime? KoniecUrlopu { get; set; }
         [JsonConverter(typeof(JsonStringEnumConverter))]
         public Role.Rola RolaOsoby { get; set; }
 
@@ -32,8 +30,6 @@ namespace _3A_AlanSzargan_HR.LogowanieOsoby
             DataUrodzenia = dataUrodzenia;
             Email = email;
             Telefon = telefon;
-            PoczatekUrlopu = null;
-            KoniecUrlopu = null;
             RolaOsoby = rolaOsoby;
         }
         public override string ToString()

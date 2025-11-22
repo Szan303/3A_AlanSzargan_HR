@@ -1,4 +1,4 @@
-﻿using _3A_AlanSzargan_HR.LogowanieOsoby;
+﻿using _3A_AlanSzargan_HR.Skrypty;
 using System.Security.Cryptography.X509Certificates;
 
 namespace _3A_AlanSzargan_HR

@@ -1,4 +1,4 @@
-﻿using _3A_AlanSzargan_HR.LogowanieOsoby;
+﻿using _3A_AlanSzargan_HR.Skrypty;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

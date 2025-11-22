@@ -1,4 +1,4 @@
-using _3A_AlanSzargan_HR.LogowanieOsoby;
+using _3A_AlanSzargan_HR.Skrypty;
 
 namespace _3A_AlanSzargan_HR
 {

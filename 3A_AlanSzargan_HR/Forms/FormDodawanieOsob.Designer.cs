@@ -139,7 +139,7 @@
             dtpDodajOsobeDataUrodzenia.Format = DateTimePickerFormat.Short;
             dtpDodajOsobeDataUrodzenia.Location = new Point(12, 320);
             dtpDodajOsobeDataUrodzenia.Name = "dtpDodajOsobeDataUrodzenia";
-            dtpDodajOsobeDataUrodzenia.Size = new Size(160, 31);
+            dtpDodajOsobeDataUrodzenia.Size = new Size(142, 31);
             dtpDodajOsobeDataUrodzenia.TabIndex = 9;
             // 
             // lblDodajOsobeEmail

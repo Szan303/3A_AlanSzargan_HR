@@ -1,5 +1,4 @@
-﻿using _3A_AlanSzargan_HR.LogowanieOsoby;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Text.Json;

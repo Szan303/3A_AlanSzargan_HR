@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text.Json;
+﻿using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace _3A_AlanSzargan_HR.LogowanieOsoby
+
+namespace _3A_AlanSzargan_HR.Skrypty
 {
     public class LoginService
     {

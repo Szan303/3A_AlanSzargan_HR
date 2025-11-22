@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace _3A_AlanSzargan_HR.LogowanieOsoby
+namespace _3A_AlanSzargan_HR.Skrypty
 {
     public class Role
     {
@@ -12,8 +12,6 @@ namespace _3A_AlanSzargan_HR.LogowanieOsoby
             StarszyPracownik,
             KierownikDzialu,
             Dyrektor,
-            Prezes,
-            CEO,
             AdministratorHR
         }
     }

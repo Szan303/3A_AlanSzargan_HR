@@ -1,5 +1,4 @@
-﻿using _3A_AlanSzargan_HR.LogowanieOsoby;
-using _3A_AlanSzargan_HR.Skrypty;
+﻿using _3A_AlanSzargan_HR.Skrypty;
 using FormsTimer = System.Windows.Forms.Timer;
 namespace _3A_AlanSzargan_HR
 {
@@ -30,15 +29,19 @@ namespace _3A_AlanSzargan_HR
 
             btnMainDodajOsobe.Visible = false;
             btnMainUsunOsobe.Visible = false;
+            btnMainEdytujOsobe.Visible = false;
+            btnMainZarzadzanieUrlopami.Visible = false;
+
 
             if (osoba.RolaOsoby == Role.Rola.AdministratorHR)
             {
                 btnMainDodajOsobe.Visible = true;
                 btnMainUsunOsobe.Visible = true;
+                btnMainEdytujOsobe.Visible = true;
+                btnMainZarzadzanieUrlopami.Visible = true;
             }
-
             lblMainPrzywitanie.Text = $"Witaj, {osoba.Imie} {osoba.Nazwisko}!";
-            // Zabezpieczyć przed naciśnięciem X aby wyjść z aplikacji i zakualizować wtedy Tick
+            // Zabezpieczyć przed przyciśnięciem X
         }
         public static string PokazCzasOd(DateTime ostatniaAktywnosc)
         {
@@ -51,7 +54,7 @@ namespace _3A_AlanSzargan_HR
             else if (roznica.TotalHours < 24)
                 return $"{(int)roznica.TotalHours} godzin temu";
             else
-                return ostatniaAktywnosc.ToString("dd.MM.yyyy HH:mm"); // starsze niż 1 dzień
+                return ostatniaAktywnosc.ToString("dd.MM.yyyy HH:mm");
         }
         private void TimerAktywnosc_Tick(object? sender, EventArgs e)
         {
@@ -93,6 +96,7 @@ namespace _3A_AlanSzargan_HR
             {
                 WiadomoscService.WyslijWiadomosc(Aktualnaosoba, tekst);
                 OdswiezCzat();
+                TimerAktywnosc_Tick(null, null);
                 txbMainGlobalChatMessage.Clear();
             }
         }
@@ -127,6 +131,19 @@ namespace _3A_AlanSzargan_HR
             //DateTime aktualnyczas = DateTime.Now;
             //Aktualnaosoba.OstatniaAktywnosc = aktualnyczas;
             //LoginService.ZapiszDoPliku();
+        }
+
+        private void btnMainWniosekOUrlop_Click(object sender, EventArgs e)
+        {
+            FormWniosekOUrlop wniosek = new FormWniosekOUrlop(Aktualnaosoba);
+            wniosek.Show();
+        }
+
+        private void btnMainZarzadzanieUrlopami_Click(object sender, EventArgs e)
+        {
+            FormZarzadzanieUrlopami zarzadzanieUrlopami = new FormZarzadzanieUrlopami();
+            zarzadzanieUrlopami.Show();
+            this.Close();
         }
     }
 }
