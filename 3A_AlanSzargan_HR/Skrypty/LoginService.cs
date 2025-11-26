@@ -9,11 +9,6 @@ namespace _3A_AlanSzargan_HR.Skrypty
         private static string plikJson = "osoby.json";
 
         public static List<Osoba> listaOsob = new List<Osoba>();
-
-        static LoginService()
-        {
-            WczytajZPliku();
-        }
         public static void WczytajZPliku()
         {
             if (File.Exists(plikJson))

@@ -76,7 +76,10 @@
             Controls.Add(txbUsuwanieOsobLogin);
             Controls.Add(lblUsuwanieOsobLogin);
             ForeColor = Color.White;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FormUsuwanieOsob";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FormUsuwanieOsob";
             ResumeLayout(false);
             PerformLayout();

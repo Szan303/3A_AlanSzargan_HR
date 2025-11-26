@@ -28,13 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             txbDodajOsobeImie = new TextBox();
             lblDodajOsobeImie = new Label();
             txbDodajOsobeNazwisko = new TextBox();
             lblDodajOsobeNazwisko = new Label();
             lblDodajOsobeHaslo = new Label();
-            contextMenuStrip1 = new ContextMenuStrip(components);
             txbDodajOsobeHaslo = new TextBox();
             btnDodajOsobeDodaj = new Button();
             lblDodajOsobeDataUrodzenia = new Label();
@@ -94,12 +92,6 @@
             lblDodajOsobeHaslo.Size = new Size(91, 38);
             lblDodajOsobeHaslo.TabIndex = 4;
             lblDodajOsobeHaslo.Text = "Hasło";
-            // 
-            // contextMenuStrip1
-            // 
-            contextMenuStrip1.ImageScalingSize = new Size(24, 24);
-            contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(61, 4);
             // 
             // txbDodajOsobeHaslo
             // 
@@ -202,6 +194,7 @@
             // 
             // FormDodawanieOsob
             // 
+            AcceptButton = btnDodajOsobeDodaj;
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(40, 40, 43);
@@ -222,7 +215,10 @@
             Controls.Add(lblDodajOsobeImie);
             Controls.Add(txbDodajOsobeImie);
             ForeColor = Color.White;
+            MaximizeBox = false;
             Name = "FormDodawanieOsob";
+            ShowIcon = false;
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Dodaj Osobę";
             ResumeLayout(false);
             PerformLayout();
@@ -235,7 +231,6 @@
         private TextBox txbDodajOsobeNazwisko;
         private Label lblDodajOsobeNazwisko;
         private Label lblDodajOsobeHaslo;
-        private ContextMenuStrip contextMenuStrip1;
         private TextBox txbDodajOsobeHaslo;
         private Button btnDodajOsobeDodaj;
         private Label lblDodajOsobeDataUrodzenia;

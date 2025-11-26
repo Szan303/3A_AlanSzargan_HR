@@ -7,27 +7,39 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace _3A_AlanSzargan_HR
+namespace _3A_AlanSzargan_HR.Forms
 {
-    public partial class FormDodawanieOsob : Form
+    
+    public partial class FormEdycjaOsob : Form
     {
-        public FormDodawanieOsob()
+        private Osoba wybranaosoba;
+        public FormEdycjaOsob(Osoba Wybranaosoba)
         {
+            wybranaosoba = Wybranaosoba;
             InitializeComponent();
+            cmbEdytujOsobeRola.DataSource = Enum.GetValues(typeof(Role.Rola));
 
-            cmbDodajOsobeRola.DataSource = Enum.GetValues(typeof(Role.Rola));
+            txbEdytujOsobeImie.Text = wybranaosoba.Imie;
+            txbEdytujOsobeNazwisko.Text = wybranaosoba.Nazwisko;
+            txbEdytujOsobeHaslo.Text = wybranaosoba.Haslo;
+            txbEdytujOsobeEmail.Text = wybranaosoba.Email;
+            txbEdytujOsobeTelefon.Text = wybranaosoba.Telefon;
+            cmbEdytujOsobeRola.SelectedItem = wybranaosoba.RolaOsoby;
+            dtpEdytujOsobeDataUrodzenia.Value = wybranaosoba.DataUrodzenia;
         }
 
-        private void btnDodajOsobeDodaj_Click(object sender, EventArgs e)
+        private void btnEdytujOsobeEdytuj_Click(object sender, EventArgs e)
         {
-            string Imie = txbDodajOsobeImie.Text;
-            string Nazwisko = txbDodajOsobeNazwisko.Text;
-            string Haslo = txbDodajOsobeHaslo.Text;
-            DateTime DataUrodzenia = dtpDodajOsobeDataUrodzenia.Value;
-            string Email = txtDodajOsobeEmail.Text;
-            string Telefon = txtDodajOsobeTelefon.Text;
-            Role.Rola RolaOsoby = (Role.Rola)cmbDodajOsobeRola.SelectedItem;
-            // Sprawdzenie czy wszystkie pola są wypełnione
+            string Imie = txbEdytujOsobeImie.Text;
+            string Nazwisko = txbEdytujOsobeNazwisko.Text;
+            string login = Imie + Nazwisko;
+            string Haslo = txbEdytujOsobeHaslo.Text;
+            DateTime DataUrodzenia = dtpEdytujOsobeDataUrodzenia.Value;
+            string Email = txbEdytujOsobeEmail.Text;
+            string Telefon = txbEdytujOsobeTelefon.Text;
+            Role.Rola RolaOsoby = (Role.Rola)cmbEdytujOsobeRola.SelectedItem;
+            
+
             if (string.IsNullOrWhiteSpace(Imie) ||
                 string.IsNullOrWhiteSpace(Nazwisko) ||
                 string.IsNullOrWhiteSpace(Haslo) ||
@@ -75,15 +87,19 @@ namespace _3A_AlanSzargan_HR
                 return;
             }
 
+            wybranaosoba.Imie = Imie;
+            wybranaosoba.Nazwisko = Nazwisko;
+            wybranaosoba.Login = login;
+            wybranaosoba.Haslo = Haslo;
+            wybranaosoba.DataUrodzenia = DataUrodzenia;
+            wybranaosoba.Email = Email;
+            wybranaosoba.Telefon = Telefon;
+            wybranaosoba.RolaOsoby = RolaOsoby;
 
-            Osoba nowaOsoba = new Osoba(Imie, Nazwisko, Haslo, DataUrodzenia, Email, Telefon, RolaOsoby);
-            nowaOsoba.OstatniaAktywnosc = DateTime.Now;
-
-            LoginService.listaOsob.Add(nowaOsoba);
             LoginService.ZapiszDoPliku();
-            
-            MessageBox.Show("Dodano nową osobę: " + nowaOsoba.Imie + " " + nowaOsoba.Nazwisko, "Informacja",
+            MessageBox.Show("Dane osoby zostały zaktualizowane.", "Sukces",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
             this.Close();
         }
     }

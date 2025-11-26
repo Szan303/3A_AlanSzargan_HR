@@ -1,4 +1,5 @@
-﻿using _3A_AlanSzargan_HR.Skrypty;
+﻿using _3A_AlanSzargan_HR.Forms;
+using _3A_AlanSzargan_HR.Skrypty;
 using FormsTimer = System.Windows.Forms.Timer;
 namespace _3A_AlanSzargan_HR
 {
@@ -7,7 +8,7 @@ namespace _3A_AlanSzargan_HR
         private FormsTimer timerAktywnosc;
         private FormsTimer timerCzat;
 
-        private Osoba Aktualnaosoba;
+        public static Osoba Aktualnaosoba;
         public FormMain(Osoba osoba)
         {
             InitializeComponent();
@@ -31,6 +32,9 @@ namespace _3A_AlanSzargan_HR
             btnMainUsunOsobe.Visible = false;
             btnMainEdytujOsobe.Visible = false;
             btnMainZarzadzanieUrlopami.Visible = false;
+            btnMainEdycjaGrafiku.Visible = false;
+            btnMainWiadomosciDoHR.Visible = false;
+            label1.Visible = false;
 
 
             if (osoba.RolaOsoby == Role.Rola.AdministratorHR)
@@ -39,6 +43,9 @@ namespace _3A_AlanSzargan_HR
                 btnMainUsunOsobe.Visible = true;
                 btnMainEdytujOsobe.Visible = true;
                 btnMainZarzadzanieUrlopami.Visible = true;
+                btnMainEdycjaGrafiku.Visible = true;
+                btnMainWiadomosciDoHR.Visible = true;
+                label1.Visible = true;
             }
             lblMainPrzywitanie.Text = $"Witaj, {osoba.Imie} {osoba.Nazwisko}!";
             // Zabezpieczyć przed przyciśnięciem X
@@ -80,6 +87,7 @@ namespace _3A_AlanSzargan_HR
         }
         public void OdswierzTabliceOsob()
         {
+            LoginService.WczytajZPliku();
             libMainListaOsob.Items.Clear();
             libMainListaOsob.DataSource = null;
             foreach (var o in LoginService.listaOsob)
@@ -144,6 +152,37 @@ namespace _3A_AlanSzargan_HR
             FormZarzadzanieUrlopami zarzadzanieUrlopami = new FormZarzadzanieUrlopami();
             zarzadzanieUrlopami.Show();
             this.Close();
+        }
+
+        private void btnMainKontakt_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMainGrafik_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMainEdytujOsobe_Click(object sender, EventArgs e)
+        {
+            FormDialogEdycjaOsob dialogEdycjaOsob = new FormDialogEdycjaOsob();
+            dialogEdycjaOsob.ShowDialog();
+
+            if (string.IsNullOrEmpty(FormDialogEdycjaOsob.wybranylogin))
+            {
+                return; // Użytkownik anulował wybór
+            }
+            if (string.IsNullOrWhiteSpace(FormDialogEdycjaOsob.wybranylogin))
+            {
+                return; // Użytkownik anulował wybór
+            }
+            var wybranaOsoba = LoginService.listaOsob.FirstOrDefault(o => o.Login == FormDialogEdycjaOsob.wybranylogin);
+
+            FormEdycjaOsob edycjaOsob = new FormEdycjaOsob(wybranaOsoba);
+            edycjaOsob.Show();
+            OdswierzTabliceOsob();
+            OdswiezCzat();
         }
     }
 }

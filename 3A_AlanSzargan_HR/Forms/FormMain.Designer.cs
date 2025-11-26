@@ -162,6 +162,7 @@
             btnMainGrafik.TabIndex = 10;
             btnMainGrafik.Text = "Grafik";
             btnMainGrafik.UseVisualStyleBackColor = false;
+            btnMainGrafik.Click += btnMainGrafik_Click;
             // 
             // btnMainKontakt
             // 
@@ -172,6 +173,7 @@
             btnMainKontakt.TabIndex = 11;
             btnMainKontakt.Text = "Kontakt HR";
             btnMainKontakt.UseVisualStyleBackColor = false;
+            btnMainKontakt.Click += btnMainKontakt_Click;
             // 
             // pictureBox1
             // 
@@ -191,6 +193,7 @@
             btnMainEdytujOsobe.TabIndex = 13;
             btnMainEdytujOsobe.Text = "Edytuj Osobę";
             btnMainEdytujOsobe.UseVisualStyleBackColor = false;
+            btnMainEdytujOsobe.Click += btnMainEdytujOsobe_Click;
             // 
             // label2
             // 
@@ -240,7 +243,7 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(40, 40, 43);
-            ClientSize = new Size(1421, 777);
+            ClientSize = new Size(1421, 732);
             Controls.Add(btnMainWiadomosciDoHR);
             Controls.Add(btnMainEdycjaGrafiku);
             Controls.Add(btnMainZarzadzanieUrlopami);
@@ -261,6 +264,7 @@
             Controls.Add(lblMainPrzywitanie);
             ForeColor = Color.White;
             Name = "FormMain";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Main";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);

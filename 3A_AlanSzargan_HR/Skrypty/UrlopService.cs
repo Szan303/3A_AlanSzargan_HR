@@ -34,26 +34,26 @@ namespace _3A_AlanSzargan_HR.Skrypty
             UrlopCheck();
             ZapiszUrlopy();
         }
-        public void ZatwierdzUrlop(Guid urlopId)
-        {
-            var urlop = listaUrlopow.FirstOrDefault(u => u.Id == urlopId);
-            if (urlop != null)
-            {
-                urlop.Status = Urlop.StatusUrlopu.Zatwierdzony;
-            }
-            UrlopCheck();
-            ZapiszUrlopy();
-        }
-        public void OdrzucUrlop(Guid urlopId)
-        {
-            var urlop = listaUrlopow.FirstOrDefault(u => u.Id == urlopId);
-            if (urlop != null)
-            {
-                urlop.Status = Urlop.StatusUrlopu.Odrzucony;
-            }
-            UrlopCheck();
-            ZapiszUrlopy();
-        }
+        //public void ZatwierdzUrlop(Guid urlopId)
+        //{
+        //    var urlop = listaUrlopow.FirstOrDefault(u => u.Id == urlopId);
+        //    if (urlop != null)
+        //    {
+        //        urlop.Status = Urlop.StatusUrlopu.Zatwierdzony;
+        //    }
+        //    UrlopCheck();
+        //    ZapiszUrlopy();
+        //}
+        //public void OdrzucUrlop(Guid urlopId)
+        //{
+        //    var urlop = listaUrlopow.FirstOrDefault(u => u.Id == urlopId);
+        //    if (urlop != null)
+        //    {
+        //        urlop.Status = Urlop.StatusUrlopu.Odrzucony;
+        //    }
+        //    UrlopCheck();
+        //    ZapiszUrlopy();
+        //}
         public void UrlopCheck()
         {
             foreach (var urlop in listaUrlopow)
@@ -65,7 +65,7 @@ namespace _3A_AlanSzargan_HR.Skrypty
             }
             ZapiszUrlopy();
         }
-        public void ZapiszUrlopy()
+        public static void ZapiszUrlopy()
         {
             string json = JsonSerializer.Serialize(listaUrlopow, new JsonSerializerOptions
             {
@@ -73,7 +73,7 @@ namespace _3A_AlanSzargan_HR.Skrypty
             });
             File.WriteAllText(plikJson, json);
         }
-        public void WczytajUrlopy()
+        public static void WczytajUrlopy()
         {
             if (File.Exists(plikJson))
             {

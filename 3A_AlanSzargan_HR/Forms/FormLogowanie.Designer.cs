@@ -105,7 +105,10 @@
             Controls.Add(lblLogowanieHaslo);
             Controls.Add(txbLogowanieLogin);
             Controls.Add(lblLogowanieLogin);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FormLogowanie";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Logowanie";
             ResumeLayout(false);
             PerformLayout();
