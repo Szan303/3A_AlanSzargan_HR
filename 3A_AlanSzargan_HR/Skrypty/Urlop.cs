@@ -15,15 +15,15 @@
             Odrzucony,
             Zakonczony
         }
-        public Urlop() { }
-        public Urlop(Guid osobaId, DateTime poczatek, DateTime koniec, string powod)
-        {
-            Id = Guid.NewGuid();
-            OsobaId = osobaId;
-            Poczatek = poczatek;
-            Koniec = koniec;
-            Powod = powod;
-            Status = StatusUrlopu.Oczekuje;
-        }
+        //public Urlop() { }
+        //public Urlop(Guid osobaId, DateTime poczatek, DateTime koniec, string powod)
+        //{
+        //    Id = Guid.NewGuid();
+        //    OsobaId = osobaId;
+        //    Poczatek = poczatek;
+        //    Koniec = koniec;
+        //    Powod = powod;
+        //    Status = StatusUrlopu.Oczekuje;
+        //}
     }
 }

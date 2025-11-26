@@ -159,9 +159,9 @@
             label1.AutoSize = true;
             label1.Location = new Point(23, 53);
             label1.Name = "label1";
-            label1.Size = new Size(201, 25);
+            label1.Size = new Size(99, 25);
             label1.TabIndex = 13;
-            label1.Text = "Odrzucone i Anulowane";
+            label1.Text = "Odrzucone";
             // 
             // FormHistoriaUrlopow
             // 

@@ -39,7 +39,7 @@
             btnMainUrlopy = new Button();
             btnMainWniosekOUrlop = new Button();
             btnMainGrafik = new Button();
-            btnMainKontakt = new Button();
+            btnMainKontaktHR = new Button();
             pictureBox1 = new PictureBox();
             btnMainEdytujOsobe = new Button();
             label2 = new Label();
@@ -141,6 +141,7 @@
             btnMainUrlopy.TabIndex = 8;
             btnMainUrlopy.Text = "Urlopy";
             btnMainUrlopy.UseVisualStyleBackColor = false;
+            btnMainUrlopy.Click += btnMainUrlopy_Click;
             // 
             // btnMainWniosekOUrlop
             // 
@@ -164,16 +165,16 @@
             btnMainGrafik.UseVisualStyleBackColor = false;
             btnMainGrafik.Click += btnMainGrafik_Click;
             // 
-            // btnMainKontakt
+            // btnMainKontaktHR
             // 
-            btnMainKontakt.BackColor = Color.FromArgb(40, 40, 43);
-            btnMainKontakt.Location = new Point(461, 681);
-            btnMainKontakt.Name = "btnMainKontakt";
-            btnMainKontakt.Size = new Size(195, 33);
-            btnMainKontakt.TabIndex = 11;
-            btnMainKontakt.Text = "Kontakt HR";
-            btnMainKontakt.UseVisualStyleBackColor = false;
-            btnMainKontakt.Click += btnMainKontakt_Click;
+            btnMainKontaktHR.BackColor = Color.FromArgb(40, 40, 43);
+            btnMainKontaktHR.Location = new Point(461, 681);
+            btnMainKontaktHR.Name = "btnMainKontaktHR";
+            btnMainKontaktHR.Size = new Size(195, 33);
+            btnMainKontaktHR.TabIndex = 11;
+            btnMainKontaktHR.Text = "Kontakt HR";
+            btnMainKontaktHR.UseVisualStyleBackColor = false;
+            btnMainKontaktHR.Click += btnMainKontakt_Click;
             // 
             // pictureBox1
             // 
@@ -237,6 +238,7 @@
             btnMainWiadomosciDoHR.TabIndex = 18;
             btnMainWiadomosciDoHR.Text = "Wiad. do HR";
             btnMainWiadomosciDoHR.UseVisualStyleBackColor = false;
+            btnMainWiadomosciDoHR.Click += btnMainWiadomosciDoHR_Click;
             // 
             // FormMain
             // 
@@ -250,7 +252,7 @@
             Controls.Add(label2);
             Controls.Add(btnMainEdytujOsobe);
             Controls.Add(pictureBox1);
-            Controls.Add(btnMainKontakt);
+            Controls.Add(btnMainKontaktHR);
             Controls.Add(btnMainGrafik);
             Controls.Add(btnMainWniosekOUrlop);
             Controls.Add(btnMainUrlopy);
@@ -284,7 +286,7 @@
         private Button btnMainUrlopy;
         private Button btnMainWniosekOUrlop;
         private Button btnMainGrafik;
-        private Button btnMainKontakt;
+        private Button btnMainKontaktHR;
         private PictureBox pictureBox1;
         private Button btnMainEdytujOsobe;
         private Label label2;

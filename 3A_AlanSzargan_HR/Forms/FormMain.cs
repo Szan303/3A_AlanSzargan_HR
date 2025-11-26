@@ -13,6 +13,8 @@ namespace _3A_AlanSzargan_HR
         {
             InitializeComponent();
             WiadomoscService.WczytajCzat();
+            WiadomoscDoHRService.WczytajWiadomosciDoHR();
+            UrlopService.WczytajUrlopy();
 
             Aktualnaosoba = osoba;
             timerAktywnosc = new FormsTimer();
@@ -156,7 +158,8 @@ namespace _3A_AlanSzargan_HR
 
         private void btnMainKontakt_Click(object sender, EventArgs e)
         {
-
+            FormWiadomoscDoHR wiadomoscDoHR = new FormWiadomoscDoHR(Aktualnaosoba);
+            wiadomoscDoHR.Show();
         }
 
         private void btnMainGrafik_Click(object sender, EventArgs e)
@@ -183,6 +186,18 @@ namespace _3A_AlanSzargan_HR
             edycjaOsob.Show();
             OdswierzTabliceOsob();
             OdswiezCzat();
+        }
+
+        private void btnMainWiadomosciDoHR_Click(object sender, EventArgs e)
+        {
+            FormSkrzynkaHR skrzynkaHR = new FormSkrzynkaHR();
+            skrzynkaHR.Show();
+        }
+
+        private void btnMainUrlopy_Click(object sender, EventArgs e)
+        {
+            FormUrlopy formUrlopy = new FormUrlopy(Aktualnaosoba);
+            formUrlopy.Show();
         }
     }
 }

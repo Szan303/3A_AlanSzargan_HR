@@ -15,7 +15,7 @@ namespace _3A_AlanSzargan_HR.Skrypty
             {
                 throw new Exception("Osoba nie istnieje");
             }
-            Urlop urlop = new Urlop
+            Urlop urlop = new Urlop()
             {
                 Id = Guid.NewGuid(),
                 OsobaId = osobaId,
